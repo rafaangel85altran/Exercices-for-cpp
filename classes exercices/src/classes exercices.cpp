@@ -29,6 +29,7 @@ ZooAnimal Create function.
  *
  * */
 
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -63,16 +64,26 @@ string ZooAnimal::reptName() {
 	return name;
 }
 
+int ZooAnimal::daysSinceLastWeighed (int today)
+	{
+		 int startday, thisday;
+		 thisday = today/100*30 + today - today/100*100;
+		 startday = weightDate/100*30 + weightDate - weightDate/100*100;
+		 if (thisday < startday)
+			 thisday += 360;
+		 return (thisday-startday);
+	}
+
 int main() {
 	cout << "Exercices from https://www.cs.purdue.edu/homes/bxd/CandC++/" << endl; // prints Exercices from https://www.cs.purdue.edu/homes/bxd/CandC++/
 
 	ZooAnimal crocodrile;			//Create an object Crocodrile
 
 	crocodrile.Create("Johny", 20, 34, 56);
+
+	cout << "This animal is called " << crocodrile.reptName() << " and there is " << crocodrile.daysSinceLastWeighed(100) << " days since last weight" << endl;
+
 	crocodrile.Destroy();
-
-	cout << "This animal is called " << crocodrile.reptName() << endl;
-
 
 	return 0;
 }
