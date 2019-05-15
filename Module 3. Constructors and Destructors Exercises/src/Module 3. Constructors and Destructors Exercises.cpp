@@ -44,9 +44,9 @@ class ZooAnimal {
       int weightDate;
       int weight;
     public:
-      ZooAnimal ();							//default constructor
+      ZooAnimal ();							// default constructor
       ZooAnimal (string, int, int, int); 	// constructor function
-      //~ZooAnimal (); 						// destructor function
+      ~ZooAnimal (){}; 						// destructor function (since the constructor actually has a body, the destructor needs to have it)
       void changeWeight (int pounds);
       char* reptName ();
       int reptWeight ();
