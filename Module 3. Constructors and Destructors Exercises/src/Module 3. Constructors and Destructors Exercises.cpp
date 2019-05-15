@@ -64,7 +64,6 @@ ZooAnimal::ZooAnimal (string a, int b, int c, int d) {
 int main() {
 
 	ZooAnimal cacate ("dffsfsd", 43, 54, 6);
-	//ZooAnimal cacatue;
 
 	return 0;
 }
